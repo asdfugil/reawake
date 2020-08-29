@@ -22,7 +22,7 @@
   "repository": {
     "url": "https://glitch.com/edit/#!/reawake"
   },
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "keywords": [
     "node",
     "glitch",
