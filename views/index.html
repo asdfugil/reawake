@@ -1,0 +1,51 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Keep your glitch sites online without pinging!">
+
+	<title>Reawake!</title>
+
+	<link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+	<!-- import the webpage's stylesheet -->
+	<link rel="stylesheet" href="/style.css">
+
+	<!-- import the webpage's client-side javascript file -->
+	<script src="/script.js" defer>
+
+	</script>
+	<!-- <script src="https://defresh.js.org/defresh.js" defer></script>-->
+</head>
+
+<body>
+	<header>
+		<h1>Reawake!</h1>
+	</header>
+
+	<main>
+		<h2>Keep your glitch sites online! (without pinging)</h2>
+
+		<p>Please enter project invite link or invite code. It may take up to 10 seconds to add or remove a project.</p>
+		<p>Note: due to the 1000 hours/month limit, you can only keep 1 project up 24/7.</p>
+		<div class="project-form">
+			<label>
+          Project invite
+          <input id="project-code" type="text" maxlength="68" required placeholder="Invite link or token">
+        </label>
+        <button id="add-project" onclick="addProject()">Add Project</button>           
+        <button id="remove-project" onclick="removeProject()">Remove Project</button>
+</div>
+    </main>
+<p>Alternatively, run the follwing command in the glitch console to add your project:</p>
+<code>curl -sX PUT https://GlitchUptime.nickchan4.repl.co/api/projects/$PROJECT_INVITE_TOKEN</code>
+<p>To remove your project, run the following command:</p>
+<code>curl -sX DELETE https://GlitchUptime.nickchan4.repl.co/api/projects/$PROJECT_INVITE_TOKEN</code>
+    <footer>Made with <a href="https://repl.it">Repl.it</a>! <div id="project-count" hidden style="display:inline"></div> </footer>
+    <script src="/ws-client.js"></script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 2em 1em;
+  line-height: 1.5em;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+  max-width: calc(100% - 5rem);
+  line-height: 1.1;
+}
+#admin-login {
+  background-color: #eee;
+  grid-gap: 1em;
+  padding: 1em;
+  max-width: 70ch
+}
+#logout {
+  float: right;
+  background-color: #bbbbf2;
+}
+.console-button {
+  background-color: #000000;
+  color: #ffffff
+}
+.invite-button {
+  background-color: #bbbbf2;
+}
+.download-button {
+  background-color : #ffffff 
+}
+input {
+  border: 1px solid silver;
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+}
+#project-count {
+  font-weight: bold
+}
+button {
+  border: 2px solid currentColor;
+  border-radius: .25em;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: 1.4em;
+  padding: 0.25em 1em;
+  max-width: 20ch;
+  display: inline;
+  margin: 5px
+}
+td button {
+  border: 1px solid currentColor;
+  border-radius: .25em;
+  line-height: 1em;
+  margin: 2px
+}
+#admin-login button {
+  background-color: #bbbbf2;
+}
+.projects {
+  position: absolute;
+  border-top: 1px solid lightgrey;
+}
+table,tr,td {
+  border: none
+}
+

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Keep your glitch sites online without pinging!">
+
+	<title>Reawake!</title>
+
+	<link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+	<!-- import the webpage's stylesheet -->
+	<link rel="stylesheet" href="/admin.css">
+</head>
+
+<body>
+  <button id="logout" onclick="logout()" style="display:none">Logout</button>
+	<header>
+		<h1 id="title">Reawake! Admin</h1>
+	</header>
+	<div id="admin-login" hidden>
+		<div class="login-form">
+			<label>
+          Enter your admin key, then press login.
+          <input id="admin-key" type="text" maxlength="36" required placeholder="Admin key">
+        </label>
+        <button id="add-project" onclick="login()">Login</button>           
+</div>
+  </div>
+	<div id="dashboard" hidden>
+    <h2>Bulk actions</h2>
+   <div id="main-switches">
+     <button id="connect-all" onclick="connectAll()" style="background-color: #00ff00" class="main-switch">Connect All</button>
+          <button id="connect-all" onclick="disconnectAll()" style="background-color: #ff0000" class="main-switch">Disconnect All</button>
+   </div>
+   <h2>Projects</h2>
+   <p id="project-count">Project count: 0</p>
+   <div class="projects"></div>
+  <table id="project-list">
+    <tr>
+      <th>Project name</th>
+     <!-- <th>Project id</th> -->
+      <th>Tools</th>
+    </tr>
+  </table>
+  </div>
+	<script src="/admin.js">
+	</script>
+</body>
+
+</html>
