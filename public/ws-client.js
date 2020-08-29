@@ -20,6 +20,8 @@ client.addEventListener('close', function clear() {
 client.addEventListener('message', event => {
   const data = JSON.parse(event.data)
   if (data.type === "PROJECT_COUNT") {
+   if (document.getElementById("logout")) document.getElementById("project-count").innerHTML = `Project count: ${data.payload}`
+   else
     document.getElementById("project-count").innerHTML = `Keeping ${data.payload} projects online.`
   } else if (data.type === 'pong') {
     clearTimeout(client.pingTimeout)
