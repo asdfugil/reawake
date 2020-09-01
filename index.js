@@ -18,6 +18,11 @@
     max: 5, // limit each IP to 5 requests per windowMs
     message: '{"message":"Too many requests, please try again later"}'
   });
+    const adminLimiter = rateLimit({
+    windowMs: 60000,
+    max: 100, // limit each IP to 100 requests per windowMs
+    message: '"Too many requests, please try again later"'
+  });
   const { spawn } = require('child_process');
   const children = new Map();
   const app = express();
@@ -104,6 +109,7 @@
     res.set('Content-Type', 'application/json');
     next();
   });
+  app.use('/admin/',adminLimiter)
   app.use('/api/admin', (req, res, next) => {
     if (req.headers.authorization !== process.env.ADMIN_KEY) return res.status(401).send('"Missing or incorrect admin key."')
     next()
@@ -223,3 +229,4 @@
     if (!res.ok) throw new Error(res.statusText);
   }, 60000)
 })();
+

@@ -33,7 +33,7 @@ input {
   width: 100%;
 }
 
-.project-form button {
+.project-form button, #admin-panel {
   background-color: #bbbbf2;
   border: 2px solid currentColor;
   border-radius: .25em;
@@ -54,4 +54,8 @@ footer {
   margin-top: 3em;
   padding-top: 1.5em;
   border-top: 1px solid lightgrey;
+}
+
+#admin-panel {
+  float:right
 }

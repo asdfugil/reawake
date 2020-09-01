@@ -20,6 +20,17 @@ function removeProject() {
     else res.json().then(text => text ? alert(text.message): res.statusText);
   });
 }
+function admin() {
+  window.location.href = "/admin"
+}
+if (localStorage.getItem("key")) {
+  const Adminkey = localStorage.getItem("key")
+  fetch("/api/admin/login",{
+    headers:{ authorization:Adminkey }
+  }).then(res => {
+    if (res.ok) document.getElementById("admin-panel").removeAttribute("style")
+  })
+}
 fetch('./api/totalProjects').then(res => {
   res.text().then(count => {
     var powering = document.getElementById("project-count")

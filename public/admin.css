@@ -73,3 +73,9 @@ table,tr,td {
   border: none
 }
 
+#main-page {
+  float:right;
+  background-color:khaki
+}
+
+

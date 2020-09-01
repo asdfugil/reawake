@@ -25,6 +25,9 @@ async function feedback(msg, res) {
     alert(errMsg)
   }
 }
+function main_page () {
+  window.location.href = "/"
+}
 function leave(id) {
   return fetch(`/api/admin/projects/${id}`, {
     method: 'DELETE', headers: {
