@@ -24,7 +24,7 @@ function admin() {
   window.location.href = "/admin"
 }
 if (localStorage.getItem("key")) {
-  const Adminkey = localStorage.getItem("key")
+  var Adminkey = localStorage.getItem("key")
   fetch("/api/admin/login",{
     headers:{ authorization:Adminkey }
   }).then(res => {
