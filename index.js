@@ -1,13 +1,7 @@
 // ETA = NOW
 // THIS DOES NOT PING THE URL
-
-// server.js
-// where your node app starts
 // DELETE https://api.glitch.com/v1/projects/:project-id/user/:user-id
 // POST https://api.glitch.com/projects/:invite-code/join
-// we've started you off with Express (https://expressjs.com/)
-// but feel free to use whatever libraries or frameworks you'd like through `package.json`.
-
 (async () => {
   process.on('unhandledRejection', error => console.error(error));
   const fs = require('fs')
@@ -229,4 +223,3 @@
     if (!res.ok) throw new Error(res.statusText);
   }, 60000)
 })();
-
