@@ -132,7 +132,7 @@
   app.delete('/api/admin/projects/:project_id/ws', (req, res) => {
     const id = req.params.id
     const child = children.get(id)
-    if (child || child.exitCode || child.killed) {
+    if (!child || child.exitCode || child.killed) {
       return res.status(204)
     } else {
       child.kill('SIGINT')
