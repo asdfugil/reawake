@@ -6,11 +6,11 @@ class ConnectedProject {
   constructor(project_id,_mode) {
     const ws = new WebSocket(`wss://api.glitch.com/${project_id}/logs?authorization=${GLITCH_TOKEN}`)
     ws.once('open',() => {
-      console.log(ws.OPEN)
       setInterval(() => {
-        if (ws.OPEN) ws.send('keep alive')
+        if (ws.OPEN === 1) ws.send('keep alive')
       },30000)
     })
+    /**@type { WebSocket } */
     this.ws = ws
     this.id = project_id
   }
