@@ -27,6 +27,7 @@ const limiter = rateLimit({
   max: 5, // limit each IP to 5 requests per windowMs
   message: '{"message":"Too many requests, please try again later"}'
 });
+app.use(express.static("public"))
 app.use('/api',(req,res,next) => {
   res.set('Content-Type','application/json')
   next()
